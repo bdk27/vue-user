@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+       <div class="container">
+           <div class="card" v-for="item in data">
+               <img :src="item.picture.large">
+               <h3>{{}}</h3>
+               <ul>
+                   <li>Email: {{}}</li>
+                   <li>Phone: {{}}</li>
+                   <li>Cell: {{}}</li>
+                   <li>City: {{}}</li>
+                   <li>State: {{}}</li>
+                   <li>Country: {{}}</li>
+                   <li>Postcode: {{}}</li>
+                   <li>Address: {{}}</li>
+                   <li>description: {{}}</li>
+                   <li><small>dob: {{}}</small></li>
+                   <li><small>resistered: {{}}</small></li>
+               </ul>
+           </div>
+       </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    data: [],
+                }
+            },
+            methods: {
+                getData() {
+                    fetch('https://randomuser.me/api/?results=8').then((res) => {
+                        return res.json(); 
+                    }).then((jsonData) => {
+                        console.log(jsonData);
+                        this.data = jsonData.results;
+                    });
+               }
+            },
+            mounted() {
+               this.getData();
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
