@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    list-style: none;
+}
+.change{
+    text-align: center;
+    margin: 4rem 0;
+}
+.change h1{
+    font-size: 4rem;
+    padding: 1rem;
+}
+.change button{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 5rem;
+    background: transparent;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    cursor: pointer;
+    transition: .5s;
+}
+.change button:hover{
+    color: #fff;
+    background: red;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 10%;
+}
+.col{
+    width: 25%;
+}
+.card{
+    margin: 2rem;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+.card img{
+    width: 200px;
+    border-radius: 50%;
+    padding: 20px;
+}
+.card h3{
+    font-size: 2rem;
+}
+.card ul{
+    margin-top: 10px;
+}
+.card ul li{
+    font-size: 1.6rem;
+    line-height: 1.6em;
+    color: #6c6c6c;
+}
+.card ul li i{
+    font-size: 1.6rem;
+
+}
+.card .icons{
+    padding: 1.5rem;
+}
+.card .icons i{
+    color: #adadad;
+    font-size: 2.5rem;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+.card .icons i:hover:nth-child(1){
+    color: #00c300;
+}
+.card .icons i:hover:nth-child(2){
+    color: #1877f2;
+}
+.card .icons i:hover:nth-child(3){
+    color: #1da1f2;
+}
+
+
+
+
+
+
+

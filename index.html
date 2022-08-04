@@ -5,27 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5ed6520c8d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
        <div class="container">
-           <div class="card" v-for="item in data">
-               <img :src="item.picture.large">
-               <h3>{{}}</h3>
-               <ul>
-                   <li>Email: {{}}</li>
-                   <li>Phone: {{}}</li>
-                   <li>Cell: {{}}</li>
-                   <li>City: {{}}</li>
-                   <li>State: {{}}</li>
-                   <li>Country: {{}}</li>
-                   <li>Postcode: {{}}</li>
-                   <li>Address: {{}}</li>
-                   <li>description: {{}}</li>
-                   <li><small>dob: {{}}</small></li>
-                   <li><small>resistered: {{}}</small></li>
-               </ul>
-           </div>
+            <div class="change">
+                <h1>Random User Generator</h1>
+                <button type="button">換一組</button>
+            </div>
+
+            <div class="row">
+                <div class="col" v-for="item in data">
+                    <div class="card">
+                        <img :src="item.picture.large">
+                        <h3>
+                            {{ item.name.title }}
+                            {{ item.name.first }}
+                            {{ item.name.last }}
+                        </h3>
+                        <ul>
+                            <li>
+                                Gender : {{ item.gender }}
+                                <i class="fa-solid fa-venus" v-if="item.gender === 'female'"></i>
+                                <i class="fa-solid fa-mars" v-else></i>
+                            </li>
+                            <li>Email : {{ item.email }}</li>
+                            <li>Phone : {{ item.phone }}</li>
+                            <li>Cell : {{ item.cell }}</li>
+                            <li>City : {{ item.location.city }}</li>
+                        </ul>
+                        <div class="icons">
+                            <i class="fa-brands fa-line"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>  
+            </div>
        </div>
     </div>
 
