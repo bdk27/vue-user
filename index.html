@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/vue@3"></script>
+    <title>Random User Generator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/5ed6520c8d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
-       <div class="container">
+        <div class="container" :class="{ 'light-bgcolor': bgcolor, 'dark-bgcolor': !bgcolor }">
             <div class="change">
-                <h1>Random User Generator</h1>
-                <button type="button">換一組</button>
+                <h1 :class="{ 'light-textcolor': !bgcolor, 'dark-textcolor': bgcolor }">Random User Generator</h1>
+                <div class="btn-flex">
+                    <button type="button" @click="getData">換一組</button>
+                    <i class="fa-solid fa-toggle-off" :class="bgcolor === true ? 'fa-toggle-off':'fa-toggle-on', { 'light-textcolor': !bgcolor, 'dark-textcolor': bgcolor }" @click="switchBg"></i>
+                </div>   
             </div>
 
             <div class="row">
@@ -37,21 +38,25 @@
                             <li>City : {{ item.location.city }}</li>
                         </ul>
                         <div class="icons">
-                            <i class="fa-brands fa-line"></i>
+                            <i class="fa-brands fa-instagram"></i>
                             <i class="fa-brands fa-facebook"></i>
                             <i class="fa-brands fa-twitter"></i>
                         </div>
                     </div>
                 </div>  
             </div>
-       </div>
+        </div>
     </div>
 
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://kit.fontawesome.com/5ed6520c8d.js" crossorigin="anonymous"></script>
+   
     <script>
         Vue.createApp({
             data() {
                 return {
                     data: [],
+                    bgcolor: true,
                 }
             },
             methods: {
@@ -62,7 +67,10 @@
                         console.log(jsonData);
                         this.data = jsonData.results;
                     });
-               }
+                },
+                switchBg(){
+                    this.bgcolor = !this.bgcolor;
+                },
             },
             mounted() {
                this.getData();

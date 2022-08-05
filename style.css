@@ -7,13 +7,31 @@
     font-size: 10px;
     list-style: none;
 }
+
+.light-bgcolor{
+    background: #fff;
+}
+.dark-bgcolor{
+    background: #272727;
+}
+.light-textcolor{
+    color: #fff;
+}
+.dark-textcolor{
+    color: #272727;
+}
 .change{
     text-align: center;
-    margin: 4rem 0;
+    padding: 4rem;
 }
 .change h1{
     font-size: 4rem;
     padding: 1rem;
+}
+.change .btn-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .change button{
     font-size: 2rem;
@@ -29,6 +47,11 @@
 .change button:hover{
     color: #fff;
     background: red;
+}
+.change i{
+    font-size: 4rem;
+    margin-left: 3rem;
+    cursor: pointer;
 }
 .row{
     display: flex;
@@ -64,7 +87,6 @@
 }
 .card ul li i{
     font-size: 1.6rem;
-
 }
 .card .icons{
     padding: 1.5rem;
@@ -76,7 +98,7 @@
     cursor: pointer;
 }
 .card .icons i:hover:nth-child(1){
-    color: #00c300;
+    color: #e1306c;
 }
 .card .icons i:hover:nth-child(2){
     color: #1877f2;
@@ -85,9 +107,36 @@
     color: #1da1f2;
 }
 
-
-
-
+@media (max-width: 991px){
+    .col{
+        width: 33.3%;
+    }
+    .card img{
+        width: 150px;
+    }
+    .card h3{
+        font-size: 1.5rem;
+    }
+    .card ul li{
+        font-size: 1.2rem;
+    }
+    .card ul li i{
+        font-size: 1.2rem;
+    }
+    .card .icons{
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 768px){
+    .col{
+        width: 50%;
+    }
+}
+@media (max-width: 450px){
+    .col{
+        width: 100%;
+    }
+}
 
 
 
